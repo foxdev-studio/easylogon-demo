@@ -1,0 +1,68 @@
+@import "/node_modules/@fluentui/react/dist/sass/References";
+
+ul, ol
+{
+	margin: 0;
+}
+
+.containerItem
+{
+	width: 100%
+}
+
+// Fix to make chart responsive
+.recharts-wrapper
+{
+	width: 100% !important;
+}
+
+svg.recharts-surface
+{
+	width: 100%;
+}
+
+html
+{
+	background-color: $ms-color-white;
+}
+
+// Dark theme adjustments for plugin
+@media (prefers-color-scheme: dark)
+{
+	.ezl-container button.ms-Button
+	{
+		background-color: rgb(51, 51, 51);
+		color: white;
+	}
+
+	.ezl-container button.ms-Button:hover
+	{
+		background-color: rgb(68, 68, 68);
+		color: rgb(244, 244, 244);
+	}
+
+	.ms-Tooltip-subtext
+	{
+		color: white !important;
+	}
+
+	.ms-Tooltip .ms-Callout-beak,
+	.ms-Tooltip .ms-Callout-beakCurtain,
+	.ms-Tooltip .ms-Callout-main
+	{
+		background-color: rgb(51, 51, 51) !important;
+	}
+
+	html
+	{
+		background-color: $ms-color-neutralPrimary;
+	}
+}
+
+@media screen and (max-width: 800px)
+{
+	.container
+	{
+		flex-flow: column;
+	}
+}

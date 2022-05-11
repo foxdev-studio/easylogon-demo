@@ -1,0 +1,38 @@
+{
+	"short_name": "EasyLogon demo",
+	"name": "EasyLogon Interactive demo",
+	"description": "Log in on any device with a few clicks",
+	"lang": "en",
+	"dir": "auto",
+	"categories": [ "productivity", "security", "utilities", "demo" ],
+	"icons":
+	[
+		{
+			"src": "favicon.svg",
+			"type": "image/svg+xml",
+			"purpose": "monochrome",
+			"sizes": "150x150"
+		},
+		{
+			"src": "favicon.svg",
+			"type": "image/svg+xml",
+			"purpose": "maskable",
+			"sizes": "150x150"
+		},
+		{
+			"src": "apple-touch-icon.png",
+			"type": "image/png",
+			"sizes": "180x180"
+		},
+		{
+			"src": "icon-512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	],
+	"start_url": "/",
+	"scope": "/",
+	"display": "standalone",
+	"theme_color": "#ffffff",
+	"background_color": "#ffffff"
+}
