@@ -53,7 +53,7 @@ export default class SandboxThree extends React.Component<ISandboxProps, IStates
 
 		this.setState(newState);
 
-		// if (newState.loginError === null && newState.passwordError === null)
+		if (newState.loginError === null && newState.passwordError === null)
 			this.props.context.current.OnFinished();
 	}
 
