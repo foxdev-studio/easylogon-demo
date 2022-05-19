@@ -1,0 +1,38 @@
+name: 'CI/CD pipeline'
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: 'Use Node.js 16.x'
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+          cache: 'yarn'
+      - run: yarn build
+
+      - name: 'Drop artifacts'
+        uses: actions/upload-artifact@v3.0.0
+        with:
+          name: 'Build'
+          path: 'build'
+
+      - name: SSH Server Deploy
+        uses: kostya-ten/ssh-server-deploy@v4
+        with:
+          host: ezlog.app
+          username: ${{ secrets.prodUser }}
+          password: ${{ secrets.prodPwd }}
+          scp_source: 'build/*'
+          scp_target: '/var/www/demo.ezlog.app/'
+
+      - name: GitHub Release from Tag
+        uses: eloquent/github-release-action@v1

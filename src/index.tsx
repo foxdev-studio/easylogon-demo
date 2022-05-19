@@ -30,9 +30,10 @@ function UpdateLocale() : void
 	// CIS countries languages ()
 	let ruLanguages : string[] = [ "ru", "uk", "be", "kk", "ky", "ab", "mo", "my", "uz" ];
 
-	if (window.location.pathname.startsWith("/en"))
-		return;
+	console.log((ruLanguages.includes(navigator.language.substring(0, 2)) || window.location.pathname.startsWith("/ru")) && !window.location.pathname.startsWith("/en"));
 
-	if (ruLanguages.includes(navigator.language.substring(0, 2)) || window.location.pathname.startsWith("/ru"))
+	if ((ruLanguages.includes(navigator.language.substring(0, 2)) || window.location.pathname.startsWith("/ru")) && !window.location.pathname.startsWith("/en"))
 		Strings.setLanguage("ru");
+	else
+		Strings.setLanguage("en");
 }
