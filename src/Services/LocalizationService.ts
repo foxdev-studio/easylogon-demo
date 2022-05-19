@@ -1,4 +1,4 @@
-import LocalizedStrings, { LocalizedStringsMethods } from "react-localization";
+import LocalizedStrings from "react-localization";
 
 export let Strings = new LocalizedStrings(
 	{
