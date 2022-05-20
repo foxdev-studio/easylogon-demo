@@ -45,5 +45,5 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           tag: '${{ github.run_id }}/${{ github.run_number }}'
-          artifacts: 'build'
+          artifacts: 'EasyLogonDemo-Bundle.zip'
           token: ${{ secrets.GH_TOKEN }}
