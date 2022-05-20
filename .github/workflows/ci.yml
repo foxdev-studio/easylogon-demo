@@ -35,6 +35,12 @@ jobs:
           scp_source: 'build/*'
           scp_target: '/var/www/demo.ezlog.app/'
 
+      - name: Pack bundle
+        uses: TheDoctor0/zip-release@0.4.1
+        with:
+          filename: ./EasyLogonDemo-Bundle.zip
+          path: 'build'
+
       - name: Create GitHub Release
         uses: ncipollo/release-action@v1
         with:
