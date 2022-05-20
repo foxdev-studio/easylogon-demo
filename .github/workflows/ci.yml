@@ -35,5 +35,9 @@ jobs:
           scp_source: 'build/*'
           scp_target: '/var/www/demo.ezlog.app/'
 
-      - name: GitHub Release from Tag
-        uses: eloquent/github-release-action@v1
+      - name: Create GitHub Release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: '${{ github.run_id }}/${{ github.run_number }}'
+          artifacts: 'build'
+          token: ${{ secrets.GH_TOKEN }}
